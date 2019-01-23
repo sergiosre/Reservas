@@ -15,8 +15,7 @@ class Reserva extends CI_Controller
 
         $this->load->model('horas_model');
         $horaid = $this->horas_model->recuperarHorasById($hora);
-        $horaid = $horaid[0];
-        
+
         $this->load->model('reservas_model');
         $ok = $this->reservas_model->reservar($usuario, $urbanizacion, $fecha, $horaid);
 
@@ -24,12 +23,11 @@ class Reserva extends CI_Controller
             if ($ok) {
                 frame($this, 'reservas_view/reservaOK');
                 redirect(base_url() . 'Usuario/dashboard');
-                echo $horaid;
             } else {
                 frame($this, 'reservas_view/reservaERROR');
             }
         } else {
-            frame($this, 'reservas_view/reservaERROR', $data);
+            frame($this, 'reservas_view/reservaERROR');
         }
     }
 
