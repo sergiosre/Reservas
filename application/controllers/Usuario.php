@@ -71,7 +71,7 @@ class Usuario extends CI_Controller
     public function dashboard() //Muestra la pagina princiapal para realizar las reservas
 
     {
-        $this->load->model('horas_model');
+        // $this->load->model('horas_model');
         $data = [];
         $data['usuario'] = $_SESSION['usuario'];
         $data['password'] = $_SESSION['password'];
@@ -93,13 +93,13 @@ class Usuario extends CI_Controller
         if ($ajaxOK) {
             $fecha = isset($_POST['fecha']) ? $_POST['fecha'] : null;
             $hora = date("H:i");
-        
+
             if ($fecha != null) {
                 $nuevaFecha = strtotime($fecha);
                 $hoy = strtotime(date('d-m-Y'));
                 if ($nuevaFecha > $hoy) {
                     $hora = '08:00';
-                }else if($nuevaFecha < $hoy){
+                } else if ($nuevaFecha < $hoy) {
                     $hora = '21:00';
                 }
                 $this->load->model('horas_model');
@@ -115,7 +115,7 @@ class Usuario extends CI_Controller
             }
              */
             }
-            
+
         }
 
     }
