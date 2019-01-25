@@ -40,7 +40,8 @@
 <section class="bg-reserva">
     <div class="container">
         <div class="row justify-content-center">
-            <form action="<?=base_url()?>Reserva/reservarPost" method="post">
+            <span id="confirmacion"></span>
+            <form method="post">
                 <div class="p-2">
                     <div class="form-row">
                         <div class="col">
@@ -55,7 +56,7 @@
                             <select name="hora" id="hora" class="form-control custom-select" width="276"></select>
                         </div>
                         <div class="col">
-                            <button type="submit" class="form-control btn btn-success" type="button">Reservar</button>
+                            <input type="button" onclick="reserva()" class="form-control btn btn-success" type="button" value="Reservar"/>
                         </div>
                     </div>
                 </div>

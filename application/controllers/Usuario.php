@@ -106,19 +106,13 @@ class Usuario extends CI_Controller
                 $horas = $this->horas_model->recuperarHoras($fecha, $hora);
                 $hoy = date('d-m-Y');
                 echo json_encode($horas);
-                // echo strtotime($fecha);
-                // echo "\n";
-                // echo strtotime($hoy);
-                /*
-            foreach ($horas as $value) {
-            echo $value;
-            }
-             */
             }
 
         }
 
     }
+
+    
 
     // public function listar()
     // {

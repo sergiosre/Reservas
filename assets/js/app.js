@@ -10,16 +10,44 @@ function mostrarHoras() {
 
 	conexion.onreadystatechange = function () {
 		if (conexion.readyState == 4 && conexion.status == 200) {
-			accionAJAX();
+			mostrarHorasSelectAjax();
 		}
 	}
 }
 
-function accionAJAX() {
+function mostrarHorasSelectAjax() {
 	horas = JSON.parse(conexion.responseText);
 	select = document.getElementById("hora");
-	select.innerHTML="";
+	select.innerHTML = "";
 	for (let i = 0; i < horas.length; i++) {
 		select.innerHTML += `<option>${horas[i]}</option>`
 	}
+}
+
+
+function reserva() {
+	fecha = document.getElementById('datepicker').value;
+	hora = document.getElementById('hora').value;
+
+	conexion = new XMLHttpRequest();
+	conexion.open("POST", "http://[::1]/ci/Reserva/reservarAjax", true);
+	conexion.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+	conexion.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	conexion.send(`fecha=${fecha}&hora=${hora}`);
+
+	conexion.onreadystatechange = function () {
+		if (conexion.readyState == 4 && conexion.status == 200) {
+			reservarHoraAjax();
+		}
+	}
+}
+
+function reservarHoraAjax() {
+	confirmacion = conexion.responseText;
+	document.getElementById('confirmacion').innerHTML = confirmacion
+	setTimeout(function () {
+		document.getElementById('confirmacion').innerHTML = '';
+		window.location.href = 'http://[::1]/ci/';
+	}, 3000);
+
 }
