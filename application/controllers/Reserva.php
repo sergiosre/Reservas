@@ -30,4 +30,10 @@ class Reserva extends CI_Controller
             echo "<h3>¡La reserva no pudo ser realizada!</h3>";
         }
     }
+    
+
+    public function mostrarHistoricoReservas()
+    {
+        frame($this, 'reservas_view/historicoReservas');
+    }
 }
