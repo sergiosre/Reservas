@@ -14,7 +14,7 @@ body {
 	font-family: 'Montserrat', sans-serif;
 
 	/* fallback for old browsers */
-	background-color: #3eba5d;
+	background-color: white;
 
 }
 
@@ -147,11 +147,11 @@ body {
 	border-color: #ffe38f;
 }
 
-.bg-reserva {
-	background-color: white;
-	height: 50%;
-	width: 100%;
+.bg-login {
+	background-color: #3eba5d;
 }
+
+
 
 .perfil {
 	background-color: rgb(230, 230, 230);

@@ -12,7 +12,7 @@
                     <a class="nav-link-color nav-link" href="<?=base_url()?>">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link-color nav-link" href="<?=base_url()?>Reserva/mostrarHistoricoReservas">Mis Reservas</a>
+                    <a class="nav-link-color nav-link" href="<?=base_url()?>Reserva/misReservas">Mis Reservas</a>
                 </li>
             </ul>
             <form action="<?=base_url()?>Usuario/logout" method="post" class="form-inline my-2 my-lg-0">

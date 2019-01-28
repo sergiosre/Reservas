@@ -22,4 +22,9 @@ class Reservas_model extends CI_Model
 
     }
 
+    public function listarReservasUsuario($usuario)
+    {
+        // return R::findAll("select r.fecha, h.hora from reserva r, horario h where r.usuario = 'lorenamh' and r.hora = h.id ");
+        return R::getAll('select reserva.fecha, horario.hora from reserva , horario  where reserva.usuario = ? and reserva.hora = horario.id', [$usuario]);
+    }
 }

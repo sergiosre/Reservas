@@ -1,5 +1,5 @@
 <!-- Login -->
-<section>
+<section class="bg-login">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-10 col-xl-9 mx-auto">
@@ -32,7 +32,7 @@
 	</div>
 </section>
 <!-- Regsitrate -->
-<section>
+<section class="bg-login">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-10 col-xl-9 mx-auto">
@@ -46,7 +46,7 @@
 </section>
 
 <!-- Reseva tu pista -->
-<section>
+<section class="bg-login">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-10 col-xl-9 mx-auto">
@@ -60,7 +60,7 @@
 </section>
 
 <!-- Juega! -->
-<section>
+<section class="bg-login">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-10 col-xl-9 mx-auto">

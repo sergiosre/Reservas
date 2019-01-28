@@ -11,7 +11,7 @@
                     <a class="nav-link-color nav-link" href="<?=base_url()?>">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link-color nav-link" href="<?=base_url()?>Reserva/mostrarHistoricoReservas">Mis Reservas</a>
+                    <a class="nav-link-color nav-link" href="<?=base_url()?>Reserva/misReservas">Mis Reservas</a>
                 </li>
             </ul>
             <form action="<?=base_url()?>Usuario/logout" method="post" class="form-inline my-2 my-lg-0">
@@ -20,13 +20,13 @@
         </div>
     </nav>
 </section>
-<section class="bg-reserva">
+<div class="bg-reservas">
     <div class="container p-2">
         <div class="row justify-content-center">
             <div class="p-2">
                 <h3>Mis Reservas</h3>
             </div>
-            <table class="table table-hover text-center">
+            <table class="table table-hover text-center bg-reservas">
             <thead>
                 <tr>
                 <th scope="col">#</th>
@@ -36,14 +36,16 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                <th scope="row">1</th>
-                <td></td>
-                <td></td>
-                <td><button type="button" class="btn btn-danger"><img src="<?=base_url()?>/assets/icons/x-2x.png" alt=""></button></td>
-                </tr>
+                <?php $cont=0; foreach ($reservas as $reserva):?>
+		                <tr>
+		                <th scope="row"><?=$cont+=1?></th>
+		                <td><?=$reserva['fecha']?></td>
+		                <td><?=$reserva['hora']?></td>
+		                <td><button type="button" class="btn btn-danger"><img src="<?=base_url()?>/assets/icons/x-2x.png" alt=""></button></td>
+		                </tr>
+		            <?php endforeach;?>
             </tbody>
             </table>
         </div>
     </div>
-</section>
+</div>

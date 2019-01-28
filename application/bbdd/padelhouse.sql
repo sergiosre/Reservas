@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 22-01-2019 a las 19:48:45
+-- Tiempo de generación: 28-01-2019 a las 09:01:55
 -- Versión del servidor: 10.1.31-MariaDB
 -- Versión de PHP: 7.2.3
 
@@ -71,7 +71,30 @@ CREATE TABLE `reserva` (
 --
 
 INSERT INTO `reserva` (`id`, `usuario`, `urbanizacion`, `fecha`, `hora`) VALUES
-(13, 'Admin', 'Todas', '01/22/2019', '1');
+(17, 'Admin', 'Todas', '01/23/2019', '12'),
+(18, 'Admin', 'Todas', '01/24/2019', '1'),
+(19, 'Admin', 'Todas', '01/24/2019', '2'),
+(20, 'Admin', 'Todas', '01/24/2019', '10'),
+(21, 'lorenamh', 'Nature', '01/24/2019', '3'),
+(22, 'Admin', 'Todas', '01/24/2019', '9'),
+(23, 'Admin', 'Todas', '01/25/2019', '1'),
+(28, 'Admin', 'Todas', '01/24/2019', '12'),
+(29, 'Admin', 'Todas', '01/24/2019', '13'),
+(30, 'Admin', 'Todas', '01/25/2019', '2'),
+(31, 'Admin', 'Todas', '01/25/2019', '3'),
+(32, 'Admin', 'Todas', '01/25/2019', '4'),
+(33, 'Admin', 'Todas', '01/25/2019', '5'),
+(34, 'Admin', 'Todas', '01/25/2019', '6'),
+(35, 'Admin', 'Todas', '01/25/2019', '7'),
+(36, 'Admin', 'Todas', '01/25/2019', '8'),
+(37, 'Admin', 'Todas', '01/25/2019', '9'),
+(38, 'Admin', 'Todas', '01/25/2019', '10'),
+(39, 'Admin', 'Todas', '01/25/2019', '11'),
+(40, 'Admin', 'Todas', '01/25/2019', '12'),
+(41, 'Admin', 'Todas', '01/25/2019', '13'),
+(42, 'Admin', 'Todas', '01/26/2019', '2'),
+(43, 'lorenamh', 'Nature', '01/26/2019', '4'),
+(44, 'Admin', 'Todas', '01/26/2019', '1');
 
 -- --------------------------------------------------------
 
@@ -163,7 +186,7 @@ ALTER TABLE `horario`
 -- AUTO_INCREMENT de la tabla `reserva`
 --
 ALTER TABLE `reserva`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT de la tabla `urbanizacion`

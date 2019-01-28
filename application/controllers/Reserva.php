@@ -19,21 +19,20 @@ class Reserva extends CI_Controller
             $this->load->model('reservas_model');
             $ok = $this->reservas_model->reservar($usuario, $urbanizacion, $fecha, $horaid);
             if ($ok) {
-                // frame($this, 'reservas_view/reservaOK');
-                // redirect(base_url() . 'Usuario/dashboard');
                 echo "<h3>¡Reserva Realizada!</h3>";
             } else {
                 echo "<h3>¡La reserva no pudo ser realizada!</h3>";
-                // frame($this, 'reservas_view/reservaERROR');
             }
         } else {
             echo "<h3>¡La reserva no pudo ser realizada!</h3>";
         }
     }
-    
 
-    public function mostrarHistoricoReservas()
+    public function misReservas()
     {
-        frame($this, 'reservas_view/historicoReservas');
+        $this->load->model('reservas_model');
+        $reservas = $this->reservas_model->listarReservasUsuario($_SESSION['usuario']);
+        $data['reservas'] = $reservas;
+        frame($this, 'reservas_view/historicoReservas', $data);
     }
 }

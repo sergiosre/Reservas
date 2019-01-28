@@ -5,7 +5,6 @@ class Horas_model extends CI_Model
     public function recuperarHorasById($hora)
     {
         return R::getCell("select id from horario where hora='$hora'");
-
     }
 
     public function recuperarHoras($fecha, $hora)
