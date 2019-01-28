@@ -30,7 +30,7 @@
                     <figure class="img-pr-size rounded-circle bg-white">
                         <img class="img-fluid" src="<?=base_url()?>assets/img/profile.png" alt="Foto">
                     </figure>
-                    <h3><?=$_SESSION['usuario']?></h3>
+                    <h3><?=$usuario?></h3>
                 </div>
             </div>
         </div>
@@ -39,10 +39,14 @@
 <!-- Reserva -->
 <section class="bg-reserva">
     <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <span id="confirmacion"></span>
+            </div>
+        </div>
         <div class="row justify-content-center">
-            <span id="confirmacion"></span>
             <form method="post">
-                <div class="p-2">
+                <div class="col-12 p-2">
                     <div class="form-row">
                         <div class="col">
                             <input class="form-control" name="fecha" id="datepicker" placeholder="Fecha" onchange="mostrarHoras()"/>

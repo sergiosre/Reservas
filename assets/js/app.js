@@ -1,18 +1,20 @@
 function mostrarHoras() {
-
-	fecha = document.getElementById('datepicker').value;
+	fecha = document.getElementById("datepicker").value;
 
 	conexion = new XMLHttpRequest();
 	conexion.open("POST", "horasAjax", true);
-	conexion.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-	conexion.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	conexion.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+	conexion.setRequestHeader(
+		"Content-type",
+		"application/x-www-form-urlencoded"
+	);
 	conexion.send(`fecha=${fecha}`);
 
-	conexion.onreadystatechange = function () {
+	conexion.onreadystatechange = function() {
 		if (conexion.readyState == 4 && conexion.status == 200) {
 			mostrarHorasSelectAjax();
 		}
-	}
+	};
 }
 
 function mostrarHorasSelectAjax() {
@@ -20,34 +22,35 @@ function mostrarHorasSelectAjax() {
 	select = document.getElementById("hora");
 	select.innerHTML = "";
 	for (let i = 0; i < horas.length; i++) {
-		select.innerHTML += `<option>${horas[i]}</option>`
+		select.innerHTML += `<option>${horas[i]}</option>`;
 	}
 }
 
-
 function reserva() {
-	fecha = document.getElementById('datepicker').value;
-	hora = document.getElementById('hora').value;
+	fecha = document.getElementById("datepicker").value;
+	hora = document.getElementById("hora").value;
 
 	conexion = new XMLHttpRequest();
 	conexion.open("POST", "http://[::1]/ci/Reserva/reservarAjax", true);
-	conexion.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-	conexion.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	conexion.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+	conexion.setRequestHeader(
+		"Content-type",
+		"application/x-www-form-urlencoded"
+	);
 	conexion.send(`fecha=${fecha}&hora=${hora}`);
 
-	conexion.onreadystatechange = function () {
+	conexion.onreadystatechange = function() {
 		if (conexion.readyState == 4 && conexion.status == 200) {
 			reservarHoraAjax();
 		}
-	}
+	};
 }
 
 function reservarHoraAjax() {
 	confirmacion = conexion.responseText;
-	document.getElementById('confirmacion').innerHTML = confirmacion
-	setTimeout(function () {
-		document.getElementById('confirmacion').innerHTML = '';
-		window.location.href = 'http://[::1]/ci/';
+	document.getElementById("confirmacion").innerHTML = confirmacion;
+	setTimeout(function() {
+		document.getElementById("confirmacion").innerHTML = "";
+		window.location.href = "http://[::1]/ci/";
 	}, 3000);
-
 }
