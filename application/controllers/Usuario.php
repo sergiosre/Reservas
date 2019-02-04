@@ -73,11 +73,12 @@ class Usuario extends CI_Controller
     {
         // $this->load->model('horas_model');
         $data = [];
-        $data['usuario'] = $_SESSION['usuario'];
-        $data['password'] = $_SESSION['password'];
+        $data['usuario'] = $this->session->userdata('usuario');
+        $data['password'] = $this->session->userdata('password');
         //$horas = $this->horas_model->recuperarHoras($this->horasAjax());
         //$data['horas'] = $horas;
         frame($this, 'principal/dashboard', $data);
+        $this->load->view('chat/chat');
     }
 
     public function logout()
@@ -111,8 +112,6 @@ class Usuario extends CI_Controller
         }
 
     }
-
-    
 
     // public function listar()
     // {

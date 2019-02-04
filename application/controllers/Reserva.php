@@ -8,7 +8,7 @@ class Reserva extends CI_Controller
 
         $fecha = isset($_POST['fecha']) && !empty($_POST['fecha']) ? $_POST['fecha'] : null;
         $hora = isset($_POST['hora']) && !empty($_POST['hora']) ? $_POST['hora'] : null;
-        $usuario = isset($_SESSION['usuario']) && !empty($_SESSION['usuario']) ? $_SESSION['usuario'] : null;
+        $usuario = $this->session->userdata('usuario');
         $this->load->model('usuario_model');
         $urbanizacion = $this->usuario_model->recuperarUrbanizacion($usuario);
 
@@ -28,10 +28,27 @@ class Reserva extends CI_Controller
         }
     }
 
-    public function misReservas()
+    public function proximosPartidos()
+    {
+        $hoy = date('m/d/Y');
+        $hora = date("H:i");
+
+        if($hora>"21:00"){
+            $hora = "08:00";
+        }
+
+        $this->load->model('reservas_model');
+        $reservas = $this->reservas_model->listarReservasUsuario($hora, $hoy, $_SESSION['usuario']);
+        $data['reservas'] = $reservas;
+        frame($this, 'reservas_view/proximosPartidos', $data);
+
+        // echo $hora . " " . $hoy . " " . $_SESSION['usuario'];
+    }
+
+    public function historialPartidos()
     {
         $this->load->model('reservas_model');
-        $reservas = $this->reservas_model->listarReservasUsuario($_SESSION['usuario']);
+        $reservas = $this->reservas_model->listarTodasReservas($_SESSION['usuario']);
         $data['reservas'] = $reservas;
         frame($this, 'reservas_view/historicoReservas', $data);
     }

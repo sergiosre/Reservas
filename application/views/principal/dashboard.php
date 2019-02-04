@@ -1,4 +1,5 @@
 <!-- Navbar -->
+
 <section>
     <nav class="navbar navbar-expand-lg navbar-light navbar-color">
         <a class="navbar-brand" href="<?=base_url()?>"><img class="img-nav" src="<?=base_url()?>assets/img/logoph.png" alt=""></a>
@@ -12,7 +13,10 @@
                     <a class="nav-link-color nav-link" href="<?=base_url()?>">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link-color nav-link" href="<?=base_url()?>Reserva/misReservas">Mis Reservas</a>
+                    <a class="nav-link-color nav-link" href="<?=base_url()?>Reserva/proximosPartidos">Próximos Partidos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link-color nav-link" href="<?=base_url()?>Reserva/historialPartidos">Historial de Partidos</a>
                 </li>
             </ul>
             <form action="<?=base_url()?>Usuario/logout" method="post" class="form-inline my-2 my-lg-0">
@@ -49,7 +53,7 @@
                 <div class="col-12 p-2">
                     <div class="form-row">
                         <div class="col">
-                            <input class="form-control" name="fecha" id="datepicker" placeholder="Fecha" onchange="mostrarHoras()"/>
+                            <input type="text" class="form-control" name="fecha" id="datepicker" placeholder="Fecha" onchange="mostrarHoras()"/>
                             <script>
                                 $('#datepicker').datepicker({
                                     uiLibrary: 'bootstrap4'

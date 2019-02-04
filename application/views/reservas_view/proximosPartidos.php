@@ -27,7 +27,7 @@
     <div class="container p-2">
         <div class="row justify-content-center">
             <div class="p-2">
-                <h3>Histórico de Partidos</h3>
+                <h3>Próximos Partidos</h3>
             </div>
             <table class="table table-hover text-center bg-reservas">
             <thead>
@@ -35,6 +35,7 @@
                 <th scope="col">#</th>
                 <th scope="col">Fecha</th>
                 <th scope="col">Hora</th>
+                <th scope="col">Cancelar</th>
                 </tr>
             </thead>
             <tbody>
@@ -43,6 +44,7 @@
 		                <th scope="row"><?=$cont += 1?></th>
 		                <td><?=$reserva['fecha']?></td>
 		                <td><?=$reserva['hora']?></td>
+		                <td><button type="button" class="btn btn-danger"><img src="<?=base_url()?>/assets/icons/x-2x.png" alt=""></button></td>
 		                </tr>
 		            <?php endforeach;?>
             </tbody>

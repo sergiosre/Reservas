@@ -1,3 +1,4 @@
+//Funcion Ajax para mostrar las horas libres
 function mostrarHoras() {
 	fecha = document.getElementById("datepicker").value;
 
@@ -10,7 +11,7 @@ function mostrarHoras() {
 	);
 	conexion.send(`fecha=${fecha}`);
 
-	conexion.onreadystatechange = function() {
+	conexion.onreadystatechange = function () {
 		if (conexion.readyState == 4 && conexion.status == 200) {
 			mostrarHorasSelectAjax();
 		}
@@ -26,6 +27,7 @@ function mostrarHorasSelectAjax() {
 	}
 }
 
+//Funcion Ajax para realizar la reserva mostrando un mensaje de confirmacion
 function reserva() {
 	fecha = document.getElementById("datepicker").value;
 	hora = document.getElementById("hora").value;
@@ -39,7 +41,7 @@ function reserva() {
 	);
 	conexion.send(`fecha=${fecha}&hora=${hora}`);
 
-	conexion.onreadystatechange = function() {
+	conexion.onreadystatechange = function () {
 		if (conexion.readyState == 4 && conexion.status == 200) {
 			reservarHoraAjax();
 		}
@@ -49,8 +51,18 @@ function reserva() {
 function reservarHoraAjax() {
 	confirmacion = conexion.responseText;
 	document.getElementById("confirmacion").innerHTML = confirmacion;
-	setTimeout(function() {
+	setTimeout(function () {
 		document.getElementById("confirmacion").innerHTML = "";
 		window.location.href = "http://[::1]/ci/";
 	}, 3000);
+}
+
+
+//Validacion de formulario de registro
+function validarRegistro() {
+	var nombre = new RegExp("^[a-zñáéíóú ü-]{2,20}$");
+	var apellido = new RegExp("^[a-zñáéíóú ü-]{2,20}$");
+	var email = new RegExp("^[a-zñáéíóú ü-._]{2,50}[@]{1}[.]{1}");
+
+
 }
