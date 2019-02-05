@@ -3,13 +3,12 @@
 }
 
 .col-inside-lg {
-	border: 3px solid silver;
 	border-radius: 5px;
 	padding: 20px;
 }
 
 .chat {
-	height: calc(100vh - 180px);
+	height: 400px;
 }
 
 .decor-default {

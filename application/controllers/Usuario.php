@@ -71,14 +71,14 @@ class Usuario extends CI_Controller
     public function dashboard() //Muestra la pagina princiapal para realizar las reservas
 
     {
-        // $this->load->model('horas_model');
         $data = [];
         $data['usuario'] = $this->session->userdata('usuario');
         $data['password'] = $this->session->userdata('password');
-        //$horas = $this->horas_model->recuperarHoras($this->horasAjax());
-        //$data['horas'] = $horas;
+        frame($this, 'navbar/navbar');
+        frame($this, 'perfil/perfil');
         frame($this, 'principal/dashboard', $data);
-        $this->load->view('chat/chat');
+        frame($this, 'chat/chat');
+
     }
 
     public function logout()

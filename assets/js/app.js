@@ -3,7 +3,7 @@ function mostrarHoras() {
 	fecha = document.getElementById("datepicker").value;
 
 	conexion = new XMLHttpRequest();
-	conexion.open("POST", "horasAjax", true);
+	conexion.open("POST", "http://192.168.3.201/ci/Usuario/horasAjax", true);
 	conexion.setRequestHeader("X-Requested-With", "XMLHttpRequest");
 	conexion.setRequestHeader(
 		"Content-type",
@@ -33,7 +33,7 @@ function reserva() {
 	hora = document.getElementById("hora").value;
 
 	conexion = new XMLHttpRequest();
-	conexion.open("POST", "http://[::1]/ci/Reserva/reservarAjax", true);
+	conexion.open("POST", "http://192.168.3.201/ci/Reserva/reservarAjax", true);
 	conexion.setRequestHeader("X-Requested-With", "XMLHttpRequest");
 	conexion.setRequestHeader(
 		"Content-type",
@@ -53,7 +53,7 @@ function reservarHoraAjax() {
 	document.getElementById("confirmacion").innerHTML = confirmacion;
 	setTimeout(function () {
 		document.getElementById("confirmacion").innerHTML = "";
-		window.location.href = "http://[::1]/ci/";
+		window.location.href = "http://192.168.1.128/ci/";
 	}, 3000);
 }
 

@@ -32,6 +32,8 @@ class Reserva extends CI_Controller
     {
         $hoy = date('m/d/Y');
         $hora = date("H:i");
+        echo $hora;
+        echo $hoy;
 
         if($hora>"21:00"){
             $hora = "08:00";

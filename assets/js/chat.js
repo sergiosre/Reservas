@@ -17,15 +17,23 @@ $(function () {
 			text: '¿Que tal?',
 			ago: '2 min ago'
 
-        },
-        {
+		},
+		{
 			username: 'example',
 			name: 'Lorena M',
 			avatar: 'https://bootdey.com/img/Content/avatar/avatar1.png',
 			text: '¿Que tal?',
 			ago: '2 min ago'
 
-        },
+		},
+		{
+			username: 'example',
+			name: 'Lorena M',
+			avatar: 'https://bootdey.com/img/Content/avatar/avatar1.png',
+			text: '¿Que tal?',
+			ago: '2 min ago'
+
+        }, 
         {
 			username: 'example',
 			name: 'Lorena M',
