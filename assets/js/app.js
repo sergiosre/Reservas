@@ -60,9 +60,44 @@ function reservarHoraAjax() {
 
 //Validacion de formulario de registro
 function validarRegistro() {
-	var nombre = new RegExp("^[a-zñáéíóú ü-]{2,20}$");
-	var apellido = new RegExp("^[a-zñáéíóú ü-]{2,20}$");
-	var email = new RegExp("^[a-zñáéíóú ü-._]{2,50}[@]{1}[.]{1}");
+	var nombre = new RegExp("^[A-Za-zÁÉÍÓÚÜñáéíóú ü-]{2,40}$");
+	var apellido = new RegExp("^[A-Za-zÁÉÍÓÚÜñáéíóú ü-]{2,40}$");
+	// var email = new RegExp("^$");
+	var usuario = new RegExp("[0-9]{0,1}[0-9A-Za-z-._]{5,40}$");
+	var pw = new RegExp("^[A-Za-z-._][0-9]{8,40}$");
+	
+	if (!nombre.test(registro.nombre.value.trim())) {
+		cambiaColorBorde('inputNombre', 'red')
+	} else {
+		document.getElementById('nombreError').innerHTML = ""
+	}
 
+	if (!apellido.test(registro.apellidos.value.trim())) {
+		document.getElementById('apellidosError').innerHTML = "El campo no cumple los requisitos"
+	} else {
+		document.getElementById('apellidosError').innerHTML = ""
+	}
+
+	// if (!email.test(registro.email.value.trim())) {
+	// 	document.getElementById('emailError').innerHTML = "El campo no cumple los requisitos"
+	// } else {
+	// 	document.getElementById('emailError').innerHTML = ""
+	// }
+
+	if (!usuario.test(registro.user.value.trim())) {
+		document.getElementById('usuarioError').innerHTML = "El campo no cumple los requisitos"
+	} else {
+		document.getElementById('usuarioError').innerHTML = ""
+	}
+
+	if (!pw.test(registro.pwd.value.trim())) {
+		document.getElementById('pwError').innerHTML = "El campo no cumple los requisitos"
+	} else {
+		document.getElementById('pwError').innerHTML = ""
+	}
+
+	function cambiaColorBorde(id, color){
+		document.getElementById(id).style.borderColor = color
+	}
 
 }

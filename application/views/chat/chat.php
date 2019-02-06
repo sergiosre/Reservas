@@ -6,7 +6,7 @@
 					<div id="chat-messages"></div>
 					<div class="answer-add">
 						<input placeholder="Escriba un mensaje">
-						<span class="answer-btn answer-btn-2"></span>
+						<span class="answer-btn answer-btn-2 far fa-location-arrow"></span>
 					</div>
 				</div>
 			</div>
